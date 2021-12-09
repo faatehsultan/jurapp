@@ -1,0 +1,8 @@
+@media (max-width: 767px) {
+  .authForm .illustration_container {
+    max-width: 90px;
+  }
+  .authTopMobile {
+    height: fit-content !important;
+  }
+}
