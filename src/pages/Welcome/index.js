@@ -1,10 +1,10 @@
 import "./style.css";
 import Header from "../../components/AuthForm/Header";
 
-export default function Welcome() {
+export default function Welcome(props) {
   return (
     <div className="welcome" style={{ minHeight: "100vh" }}>
-      <Header />
+      <Header {...props} />
       <div className="row" style={{ minHeight: "86vh" }}>
         <div className="bg-gray col-12 col-md-5 col-lg-4 col-xl-3 p-4 p-md-5 d-flex flex-column align-items-center justify-content-center ">
           <div>

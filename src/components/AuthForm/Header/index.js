@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 
-export default function Header() {
+export default function Header(props) {
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    props.setUser(null);
+  };
+
   return (
     <div className="header p-3 d-flex justify-content-between align-items-center text-dark font_inter">
       <img src="img/Logo.png" alt="" />
@@ -9,9 +14,9 @@ export default function Header() {
         <Link to="#" className="btn text-dark">
           Dashboard
         </Link>
-        <Link to="#" className="btn text-dark">
+        <button className="btn text-dark" onClick={handleLogout}>
           <img src="/img/jd.png" alt="" /> Log Out
-        </Link>
+        </button>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import AuthForm from "../../components/AuthForm";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [enableSubmitBtn, setEnableSubmitBtn] = useState(false);
@@ -11,6 +11,10 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(email, password);
+
+    let curUser = { email: email, password: password };
+    localStorage.setItem("user", JSON.stringify(curUser));
+    props.setUser(curUser);
   };
 
   useEffect(() => {

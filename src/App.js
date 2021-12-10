@@ -9,18 +9,43 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    let userData = localStorage.getItem("user");
+    if (userData) {
+      setUser(userData);
+    }
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Redirect to="/login" />
+            {!user && <Redirect to="/login" />}
+            {user && <Redirect to="/dashboard" />}
           </Route>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/welcome" component={Welcome} />
+          <Route path="/login">
+            {!user ? (
+              <Login user={user} setUser={setUser} />
+            ) : (
+              <Redirect to="/dashboard" />
+            )}
+          </Route>
+          <Route path="/signup">
+            {!user ? <Signup /> : <Redirect to="/dashboard" />}
+          </Route>
+          <Route path="/dashboard">
+            {user ? (
+              <Welcome user={user} setUser={setUser} />
+            ) : (
+              <Redirect to="/login" />
+            )}
+          </Route>
         </Switch>
       </div>
     </Router>
