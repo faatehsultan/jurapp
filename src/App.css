@@ -43,3 +43,11 @@ body,
 .btn-primary {
   background-color: #2777ef !important;
 }
+
+a {
+  color: inherit !important;
+}
+
+.adminCardSmall {
+  height: 100px;
+}

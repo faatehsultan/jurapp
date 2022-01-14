@@ -8,7 +8,7 @@ export default function Header(props) {
   };
 
   return (
-    <div className="header p-3 d-flex justify-content-between align-items-center text-dark font_inter">
+    <div className="header p-3 d-flex justify-content-between align-items-center text-dark font_inter position-fixed w-100 bg-light top-0 left-0">
       <img src="img/Logo.png" alt="" />
       <div className="d-flex justify-content-evenly align-items-center">
         <Link to="#" className="btn text-dark">

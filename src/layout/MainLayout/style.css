@@ -1,0 +1,9 @@
+.mainLayout .mainContainer {
+  margin-left: 300px;
+}
+.mainLayout .sidebar {
+  width: 300px;
+}
+.mainLayout .sidebar, .mainLayout .mainContainer {
+  margin-top: 75px;
+}
