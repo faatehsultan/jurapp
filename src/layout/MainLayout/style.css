@@ -4,6 +4,16 @@
 .mainLayout .sidebar {
   width: 300px;
 }
-.mainLayout .sidebar, .mainLayout .mainContainer {
+@media (max-width: 768px) {
+  .mainLayout .mainContainer {
+    margin-left: 0 !important;
+  }
+  .mainLayout .sidebar {
+    display: none !important;
+  }
+}
+
+.mainLayout .sidebar,
+.mainLayout .mainContainer {
   margin-top: 75px;
 }

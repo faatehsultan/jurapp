@@ -3,7 +3,7 @@ export default function AppDetails() {
     <div className="pt-5 w-100 d-flex justify-content-center">
       <div className="w-100" style={{ maxWidth: "900px" }}>
         <h1 className="text-center">App Details</h1>
-        <table className="table mt-4 table-striped table-hover">
+        <table className="table mt-4 table-striped table-hover" >
           <thead>
             <tr>
               <th scope="col">App Name</th>
